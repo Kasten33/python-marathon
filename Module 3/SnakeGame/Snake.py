@@ -1,5 +1,4 @@
-import time
-from turtle import Turtle, Screen
+from turtle import Turtle
 
 
 class Snake:
