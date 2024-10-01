@@ -47,4 +47,9 @@ while On:
     elif snake.head.ycor() < -290:
         snake.head.sety(290)
 
+    for segment in snake.snake[1:]:
+        if snake.head.distance(segment) < 10:
+            scoreboard.game_over()
+            On = False
+
 screen.exitonclick()
