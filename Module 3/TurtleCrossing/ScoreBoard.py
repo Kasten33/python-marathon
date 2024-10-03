@@ -17,3 +17,6 @@ class SBoard1(Turtle):
     def increase_level(self):
         self.level += 1
         self.updateScoreboard()
+    def gameO(self):
+        self.goto(0, 0)
+        self.write("Game Over", align="center", font=("Courier", 80, "normal"))

@@ -14,19 +14,24 @@ class Car(Turtle):
         self.move_speed = 1
 
     def move(self):
-        new_x = self.xcor() + self.x_move
+        new_x = self.xcor() + self.x_move * self.move_speed
         new_y = self.ycor()
         self.goto(new_x, new_y)
 
     def levelX(self):
-        self.move_speed *= 0.8
+        self.move_speed *= 1.4
     
     def spawn(self):
-        cars1 = []
+        cars = []
         numC = random.randint(5, 15)
         for _ in range(numC):
             car = Car()
-            car.goto(random.randint(350, 400), random.randint(-250, 250))
-            car.move_speed *= random.uniform(0.1, 0.9)
-            cars1.append(car)
-        return cars1
+            car.goto(random.randint(-650, -550), random.randint(-450, 450))
+            car.move_speed *= random.uniform(0.1, 0.6)
+            cars.append(car)
+            self.move()
+        return cars
+    
+    def clear_cars(self, cars):
+        for car in cars:
+            car.hideturtle()
