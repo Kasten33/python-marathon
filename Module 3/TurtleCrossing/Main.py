@@ -47,9 +47,10 @@ while On:
             sb.gameO()
 
     if player.xcor() > 625:
-        player.goto(-625, player.ycor())
+        sb.gameO()
     if player.xcor() < -625:
-        player.goto(625, player.ycor())
+        sb.gameO()
+        
 
         
         

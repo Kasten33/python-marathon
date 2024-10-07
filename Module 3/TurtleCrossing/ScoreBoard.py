@@ -11,7 +11,7 @@ class SBoard1(Turtle):
 
     def updateScoreboard(self):
         self.clear()  # Clear previous text
-        self.goto(-500, 550)
+        self.goto(-400, 450)
         self.write(f"Level: {self.level}", align="center", font=("Courier", 24, "normal"))
 
     def increase_level(self):
