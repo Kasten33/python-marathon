@@ -10,4 +10,6 @@ chromeOptions.add_argument('--ignore-ssl-errors')
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chromeOptions)
 
-driver.get("https://www.amazon.com")
+driver.get("https://orteil.dashnet.org/cookieclicker/")
+
+cookie = driver.find_element_by_id("bigCookie")
