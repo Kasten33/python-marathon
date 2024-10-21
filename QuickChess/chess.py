@@ -3,6 +3,7 @@ from board import Board
 from score import Score
 from pieces import Pieces
 from player import Player
+from register import register
 
 player = Player()
 board = Board()
@@ -10,7 +11,11 @@ score = Score()
 pieces = Pieces()
 
 screen = Screen()
-screen.setup(width=800, height=800)
+register(screen)
+
+
+
+screen.setup(width=700, height=690)
 screen.bgcolor("black")
 screen.title("Quick Chess")
 screen.tracer(0)

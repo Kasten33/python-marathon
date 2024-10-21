@@ -1,27 +1,21 @@
-from turtle import Turtle
+from turtle import Turtle, Screen
 class Pieces(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("circle")
         self.penup()
-
     def Pawn(self):
-        self.goto(300,50)
-    def King(self):
-        self.goto(300,0)
-    def Queen(self):
-        self.goto(300,-50)
-    def Bishop(self):
-        self.goto(300,-100)
-    def Knight(self):
-        self.goto(300,-150)
-    def Rook(self):
-        self.goto(300,-200)
-    def generate(self):
+        self.shape("imgs/pawn1.gif")
+        self.goto(-300, 225)
         for i in range(8):
-            self.Pawn()
-            self.King()
-            self.Queen()
-            self.Bishop()
-            self.Knight()
-            self.Rook()
+            self.goto(self.xcor()+75, self.ycor())
+            self.stamp()
+    def Pawn2(self):
+        self.shape("imgs/pawn2.gif")
+        self.goto(-300, -225)
+        for i in range(8):
+            self.goto(self.xcor()+75, self.ycor())
+            self.stamp()
+    def generate(self):
+        self.Pawn()
+        self.Pawn2()

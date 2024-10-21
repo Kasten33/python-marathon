@@ -11,9 +11,9 @@ class Board(Turtle):
         for i in range(8):
             for j in range(8):
                 if (i+j)%2 == 0:
-                    self.color("white")
-                else:
                     self.color("green")
+                else:
+                    self.color("white")
                 self.begin_fill()
                 for _ in range(4):
                     self.forward(75)
