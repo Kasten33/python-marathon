@@ -2,9 +2,13 @@ import requests
 from datetime import datetime
 import smtplib
 import time
+import os
+from dotenv import load_dotenv
 
-Email = "hurlrykaden@gmail.com"
-Password = "kh205114"
+load_dotenv()
+
+email = os.getenv("EMAIL")
+password = os.getenv("PASSWORD")
 
 lat = 40.71
 lon = -111.89
@@ -50,10 +54,10 @@ while True:
     if ISS() and night():
         connection = smtplib.SMTP("smtp.gmail.com")
         connection.starttls()
-        connection.login(Email, Password)
+        connection.login(email, password)
         connection.sendmail(
-            from_addr=Email, 
-            to_addrs=Email,
+            from_addr=email, 
+            to_addrs=email,
             Subject="Look Up",
             msg="The ISS is above you in the sky"
            )
