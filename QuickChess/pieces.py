@@ -6,13 +6,13 @@ class Pieces(Turtle):
         self.penup()
     def Pawn(self):
         self.shape("imgs/pawn1.gif")
-        self.goto(-300, 225)
+        self.goto(-338, 190)
         for i in range(8):
             self.goto(self.xcor()+75, self.ycor())
             self.stamp()
     def Pawn2(self):
         self.shape("imgs/pawn2.gif")
-        self.goto(-300, -225)
+        self.goto(-338, -190)
         for i in range(8):
             self.goto(self.xcor()+75, self.ycor())
             self.stamp()
