@@ -16,6 +16,8 @@ class Pieces(Turtle):
         for i in range(8):
             self.goto(self.xcor()+75, self.ycor())
             self.stamp()
+
+            
     def generate(self):
         self.Pawn()
         self.Pawn2()
