@@ -2,16 +2,6 @@ from turtle import Screen
 from PIL import Image
 
 def register(screen: Screen):
-    
-
-
-
-# Open the image file
-    img = Image.open("imgs/DarkQueen.gif")
-
-
-# Convert the image to GIF format
-    img.save("imgs/DarkQueen.gif", "GIF")
 
 
     # Light pieces

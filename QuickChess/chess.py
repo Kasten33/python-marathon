@@ -29,6 +29,7 @@ def start():
         pieces.generate()
         
 screen.listen()
+screen.onscreenclick(pieces.Selected_Move, 1)
 start()
 
 On = True
