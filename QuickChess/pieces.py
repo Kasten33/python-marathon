@@ -10,6 +10,7 @@ class Piece(Turtle):
         self.goto(x, y)
         self.color = color
         self.piece_type = piece_type  # Store the type of the piece
+        self.has_moved = False  # Store whether the piece has moved
         
 
 class Pieces:
@@ -76,6 +77,7 @@ class Pieces:
                             'end_y': snapped_y
                         }
                         self.selected_piece.goto(snapped_x, snapped_y)
+                        self.selected_piece.has_moved = True  # Mark the piece as having moved
                         self.player.done = True  # Mark the move as done
                     else:
                         self.Flash_Red(self.original_position[0], self.original_position[1])

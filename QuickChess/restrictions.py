@@ -127,7 +127,17 @@ def Valid_King(piece, x, y, square_size, pieces, last_move):
 
     dx = abs(x - piece.xcor())
     dy = abs(y - piece.ycor())
-    return dx <= square_size and dy <= square_size
+    if dx <= square_size and dy <= square_size:
+        return True
+
+    # Castling
+    if piece.piece_type == "king" and not piece.has_moved:
+        if dx == 2 * square_size and dy == 0:
+            rook_x = x + square_size if x < piece.xcor() else x - square_size
+            rook = next((p for p in pieces if p.piece_type == "rook" and p.xcor() == rook_x and p.ycor() == piece.ycor() and not p.has_moved), None)
+            if rook and Path_Clear(piece, rook.xcor(), rook.ycor(), pieces, square_size):
+                return True
+
 
 def Is_King_In_Check(king, pieces, square_size):
     for piece in pieces:
